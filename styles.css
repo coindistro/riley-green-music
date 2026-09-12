@@ -1,0 +1,499 @@
+:root {
+  --ink: #191512;
+  --paper: #f4efe5;
+  --bone: #fff9ed;
+  --cedar: #7a3d20;
+  --cedar-dark: #482617;
+  --brass: #c89449;
+  --pine: #173b32;
+  --smoke: rgba(25, 21, 18, 0.68);
+  --line: rgba(25, 21, 18, 0.16);
+  --shadow: 0 22px 70px rgba(25, 21, 18, 0.22);
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(122, 61, 32, 0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(122, 61, 32, 0.05) 1px, transparent 1px),
+    var(--paper);
+  background-size: 42px 42px;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(18px, 4vw, 54px);
+  color: var(--bone);
+  transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.site-header.is-scrolled {
+  color: var(--ink);
+  background: rgba(244, 239, 229, 0.92);
+  box-shadow: 0 8px 30px rgba(25, 21, 18, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.brand,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.site-nav {
+  gap: clamp(14px, 3vw, 34px);
+  font: 700 13px/1.1 Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 92svh;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  padding: 130px clamp(18px, 6vw, 86px) 70px;
+  color: var(--bone);
+}
+
+.hero-photo,
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.04);
+  transform: scale(1.02);
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(90deg, rgba(11, 7, 4, 0.88), rgba(11, 7, 4, 0.38) 54%, rgba(11, 7, 4, 0.16)),
+    linear-gradient(0deg, rgba(11, 7, 4, 0.86), transparent 42%);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 850px;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-kicker,
+.release-label {
+  margin: 0 0 12px;
+  font: 800 12px/1.1 Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--brass);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(64px, 14vw, 174px);
+  line-height: 0.82;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(34px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1;
+}
+
+.hero-copy {
+  max-width: 570px;
+  margin-bottom: 34px;
+  font-size: clamp(18px, 2.4vw, 28px);
+  line-height: 1.35;
+}
+
+.hero-actions,
+.site-footer,
+.tour-list article {
+  display: flex;
+  align-items: center;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button,
+.tour-list a,
+.signup-form button {
+  min-height: 48px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 15px 22px;
+  font: 800 13px/1 Verdana, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.button.primary,
+.signup-form button {
+  background: var(--brass);
+  color: #160e09;
+}
+
+.button.secondary {
+  border-color: rgba(255, 249, 237, 0.72);
+  color: var(--bone);
+}
+
+.hero-ticket {
+  position: absolute;
+  right: clamp(18px, 5vw, 78px);
+  bottom: 46px;
+  z-index: 1;
+  width: min(330px, calc(100vw - 36px));
+  padding: 18px;
+  border: 1px solid rgba(255, 249, 237, 0.36);
+  background: rgba(25, 21, 18, 0.44);
+  backdrop-filter: blur(10px);
+}
+
+.hero-ticket span,
+.hero-ticket small {
+  display: block;
+  font: 700 12px/1.4 Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.hero-ticket strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 26px;
+}
+
+.section {
+  padding: clamp(62px, 10vw, 124px) clamp(18px, 6vw, 86px);
+}
+
+.intro,
+.signup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 560px);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: end;
+}
+
+.intro p,
+.signup p,
+.video-copy p,
+.release p,
+.tour-list p {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 14px;
+}
+
+.release {
+  min-height: 310px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255, 249, 237, 0.72);
+  box-shadow: 0 14px 34px rgba(25, 21, 18, 0.08);
+}
+
+.release.featured {
+  color: var(--bone);
+  background:
+    linear-gradient(145deg, rgba(23, 59, 50, 0.92), rgba(72, 38, 23, 0.92)),
+    url("./assets/release-hell-of-a-way.jpg") center/cover;
+  box-shadow: var(--shadow);
+}
+
+.release a {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--brass);
+  font: 800 13px/1 Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.tour {
+  background: var(--pine);
+  color: var(--bone);
+}
+
+.tour-list {
+  display: grid;
+  gap: 10px;
+}
+
+.tour-list article {
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 249, 237, 0.16);
+  background: rgba(255, 249, 237, 0.07);
+}
+
+.tour-list time {
+  width: 78px;
+  color: var(--brass);
+  font: 800 16px/1.1 Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.tour-list h3 {
+  margin-bottom: 4px;
+}
+
+.tour-list p {
+  margin-bottom: 0;
+  opacity: 0.75;
+}
+
+.tour-list a {
+  border-color: rgba(255, 249, 237, 0.32);
+  color: var(--bone);
+  white-space: nowrap;
+}
+
+.video-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(62px, 10vw, 124px) clamp(18px, 6vw, 86px);
+  background: var(--cedar-dark);
+  color: var(--bone);
+}
+
+.video-card {
+  position: relative;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--bone);
+  text-decoration: none;
+  background:
+    linear-gradient(rgba(25, 21, 18, 0.16), rgba(25, 21, 18, 0.62)),
+    url("./assets/video-thumb.jpg") center/cover;
+  box-shadow: var(--shadow);
+}
+
+.video-card strong {
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  font-size: 34px;
+}
+
+.play-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 0 14px rgba(200, 148, 73, 0.18);
+}
+
+.play-icon::after {
+  content: "";
+  position: relative;
+  left: 34px;
+  top: 26px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 24px solid #160e09;
+}
+
+.signup {
+  background: var(--bone);
+}
+
+.signup-form {
+  display: grid;
+  gap: 12px;
+}
+
+.signup-form label {
+  display: grid;
+  gap: 8px;
+  font: 800 12px/1 Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.signup-form input {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 16px;
+  color: var(--ink);
+  background: #fff;
+  font: 18px/1.2 Georgia, "Times New Roman", serif;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--smoke);
+}
+
+.site-footer {
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px clamp(18px, 6vw, 86px);
+  color: var(--bone);
+  background: var(--ink);
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+
+.site-footer a {
+  color: var(--brass);
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 860px;
+    padding-top: 112px;
+  }
+
+  .hero-ticket {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 38px;
+  }
+
+  .intro,
+  .signup,
+  .release-grid,
+  .video-band {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .tour-list article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .video-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    position: absolute;
+    flex-direction: column;
+    color: var(--bone);
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}
