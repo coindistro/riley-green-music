@@ -3,156 +3,202 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Riley Green Music</title>
+    <title>Riley Green | Official Site</title>
     <meta
       name="description"
-      content="A local one-page Riley Green music website preview with music, tour dates, videos, and fan signup."
+      content="The official home of Riley Green, featuring music, videos, tour dates, merch, and fan signup."
     />
+    <meta name="theme-color" content="#2d3235" />
+    <meta property="og:title" content="Riley Green | Official Site" />
+    <meta
+      property="og:description"
+      content="Music, videos, tour dates, merch, and more from Riley Green."
+    />
+    <meta property="og:image" content="./assets/og-image.jpg" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="stylesheet" href="https://use.typekit.net/xpm1bbq.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Riley Green home">
-        <span class="brand-mark">RG</span>
-        <span>Riley Green</span>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="splash" data-splash role="dialog" aria-modal="true" aria-label="New album feature">
+      <picture>
+        <source media="(max-width: 720px)" srcset="./assets/thats-just-me-hero-mobile.jpg" />
+        <img src="./assets/thats-just-me-hero-desktop.jpg" alt="" />
+      </picture>
+      <div class="splash-tint"></div>
+      <div class="splash-content">
+        <img class="splash-logo" src="./assets/riley-green-logo.png" alt="Riley Green" />
+        <p class="kicker">New album</p>
+        <h1>That's Just Me</h1>
+        <div class="splash-actions">
+          <a class="button light" href="#music" data-close-splash>Pre-save now</a>
+          <button class="button ghost" type="button" data-close-splash>Enter site</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <a class="logo-link" href="#top" aria-label="Riley Green home">
+        <img src="./assets/riley-green-logo.png" alt="Riley Green" />
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#music">Music</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
         <a href="#tour">Tour</a>
-        <a href="#video">Video</a>
-        <a href="#signup">Join</a>
+        <a href="#music">Music</a>
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+        <a href="#signup">Sign Up</a>
+        <a href="https://store.rileygreenmusic.com/" target="_blank" rel="noreferrer">Store</a>
+        <a href="https://www.rileygreenapp.com/" target="_blank" rel="noreferrer">Fan Club</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-label="Riley Green homepage hero">
-        <img
-          class="hero-photo"
-          src="./assets/hero-bg.jpg"
-          alt="Riley Green promotional background"
-        />
-        <div class="hero-scrim"></div>
+    <main id="main-content">
+      <section class="hero" id="top" aria-label="Riley Green hero">
+        <picture>
+          <source media="(max-width: 720px)" srcset="./assets/thats-just-me-hero-mobile.jpg" />
+          <img class="hero-image" src="./assets/thats-just-me-hero-desktop.jpg" alt="Riley Green" />
+        </picture>
+        <div class="hero-shade"></div>
         <div class="hero-content">
-          <p class="eyebrow">New music out now</p>
-          <h1>Riley Green</h1>
-          <p class="hero-copy">
-            Southern storytelling, road-worn guitars, and songs built for the front row.
-          </p>
+          <img src="./assets/riley-green-logo.png" alt="Riley Green" />
+          <p class="kicker">New album available now</p>
+          <h2>That's Just Me</h2>
           <div class="hero-actions">
-            <a class="button primary" href="#music">Listen now</a>
-            <a class="button secondary" href="#tour">See tour dates</a>
+            <a class="button light" href="#music">Listen now</a>
+            <a class="button outline" href="#tour">View tour dates</a>
           </div>
         </div>
-        <div class="hero-ticket" aria-label="Featured tour stop">
-          <span>Featured show</span>
-          <strong>Nashville, TN</strong>
-          <small>Saturday night at Bridgestone Arena</small>
+      </section>
+
+      <section class="feature-banner" aria-label="Featured release">
+        <picture>
+          <source media="(max-width: 720px)" srcset="./assets/preorder-mobile.jpg" />
+          <img src="./assets/preorder-desktop.jpg" alt="Riley Green That's Just Me" />
+        </picture>
+        <div class="feature-copy">
+          <p class="kicker">Out now</p>
+          <h2>That's Just Me</h2>
+          <a class="button light" href="#music">Stream / buy</a>
         </div>
       </section>
 
-      <section class="section intro" aria-label="Artist intro">
-        <div>
-          <p class="section-kicker">From Alabama to the arena</p>
-          <h2>Country music with dirt still on its boots.</h2>
-        </div>
-        <p>
-          Built as a local working homepage first: fast loading, responsive, and ready for real
-          music links, tour feeds, merch, and video embeds when you want to connect them.
-        </p>
-      </section>
-
-      <section class="section music" id="music">
-        <div class="section-heading">
-          <p class="section-kicker">Music</p>
-          <h2>Featured releases</h2>
-        </div>
-        <div class="release-grid">
-          <article class="release featured">
-            <span class="release-label">Single</span>
-            <h3>Worst Way</h3>
-            <p>A late-night country cut with steel guitar, grit, and a hook made for repeat play.</p>
-            <a href="https://www.rileygreenmusic.com/" target="_blank" rel="noreferrer">Open official site</a>
-          </article>
-          <article class="release">
-            <span class="release-label">Album</span>
-            <h3>Ain't My Last Rodeo</h3>
-            <p>Heartland songwriting with live-show energy.</p>
-          </article>
-          <article class="release">
-            <span class="release-label">Playlist</span>
-            <h3>Road Songs</h3>
-            <p>The essentials for tailgates, backroads, and arena nights.</p>
-          </article>
+      <section class="section tour-section" id="tour" data-bg="primary">
+        <div class="section-inner">
+          <h2>Tour</h2>
+          <div class="tour-list">
+            <article class="tour-row">
+              <time datetime="2026-09-19">Sep 19</time>
+              <div>
+                <h3>Franklin, TN</h3>
+                <p>FirstBank Amphitheater</p>
+              </div>
+              <a class="small-button" href="https://www.rileygreenmusic.com/tour" target="_blank" rel="noreferrer">Tickets</a>
+            </article>
+            <article class="tour-row">
+              <time datetime="2026-10-04">Oct 04</time>
+              <div>
+                <h3>Jacksonville, AL</h3>
+                <p>Burgess-Snow Field</p>
+              </div>
+              <a class="small-button" href="https://www.rileygreenmusic.com/tour" target="_blank" rel="noreferrer">Tickets</a>
+            </article>
+            <article class="tour-row">
+              <time datetime="2026-10-18">Oct 18</time>
+              <div>
+                <h3>Tampa, FL</h3>
+                <p>MidFlorida Credit Union Amphitheatre</p>
+              </div>
+              <a class="small-button" href="https://www.rileygreenmusic.com/tour" target="_blank" rel="noreferrer">Tickets</a>
+            </article>
+          </div>
+          <a class="section-link" href="https://www.rileygreenmusic.com/tour" target="_blank" rel="noreferrer">All dates</a>
         </div>
       </section>
 
-      <section class="section tour" id="tour">
-        <div class="section-heading">
-          <p class="section-kicker">Tour</p>
-          <h2>Upcoming shows</h2>
-        </div>
-        <div class="tour-list">
-          <article>
-            <time datetime="2026-10-03">Oct 03</time>
-            <div>
-              <h3>Nashville, TN</h3>
-              <p>Bridgestone Arena</p>
-            </div>
-            <a href="#signup">Notify me</a>
-          </article>
-          <article>
-            <time datetime="2026-10-17">Oct 17</time>
-            <div>
-              <h3>Atlanta, GA</h3>
-              <p>State Farm Arena</p>
-            </div>
-            <a href="#signup">Notify me</a>
-          </article>
-          <article>
-            <time datetime="2026-11-07">Nov 07</time>
-            <div>
-              <h3>Dallas, TX</h3>
-              <p>Dos Equis Pavilion</p>
-            </div>
-            <a href="#signup">Notify me</a>
-          </article>
+      <section class="section music-section" id="music" data-bg="alt">
+        <div class="section-inner">
+          <h2>Music</h2>
+          <div class="music-grid">
+            <a class="music-item large" href="https://open.spotify.com/artist/2QMsj4XJ7ne2hojxt6v5eb" target="_blank" rel="noreferrer">
+              <img src="./assets/release-hell-of-a-way.jpg" alt="Hell of a Way" />
+              <span>Hell of a Way</span>
+            </a>
+            <a class="music-item" href="https://open.spotify.com/artist/2QMsj4XJ7ne2hojxt6v5eb" target="_blank" rel="noreferrer">
+              <img src="./assets/preorder-mobile.jpg" alt="That's Just Me" />
+              <span>That's Just Me</span>
+            </a>
+            <a class="music-item" href="https://open.spotify.com/artist/2QMsj4XJ7ne2hojxt6v5eb" target="_blank" rel="noreferrer">
+              <img src="./assets/hero-bg.jpg" alt="Riley Green release art" />
+              <span>Ain't My Last Rodeo</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="video-band" id="video">
-        <div class="video-copy">
-          <p class="section-kicker">Video</p>
-          <h2>Live from the road</h2>
+      <section class="video-strip" id="videos" data-bg="primary">
+        <div class="section-inner">
+          <h2>Videos</h2>
+          <div class="video-grid">
+            <a class="video-tile" href="https://www.youtube.com/@RileyGreenMusic" target="_blank" rel="noreferrer">
+              <img src="./assets/video-thumb.jpg" alt="Riley Green video thumbnail" />
+              <span class="play"></span>
+              <strong>Official videos</strong>
+            </a>
+            <a class="video-tile" href="https://www.youtube.com/@RileyGreenMusic" target="_blank" rel="noreferrer">
+              <img src="./assets/og-image.jpg" alt="Riley Green performance" />
+              <span class="play"></span>
+              <strong>Live performances</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-band" id="about">
+        <div class="about-copy">
+          <p class="kicker">Jacksonville, Alabama</p>
+          <h2>Country songs with a hometown backbone.</h2>
           <p>
-            A bold video slot for the homepage. We can replace this preview with the official
-            YouTube embed or music video after the layout is approved.
+            Riley Green brings a road-tested voice to songs about family, home, love, loss,
+            and the kind of places that still shape a person long after they leave.
           </p>
         </div>
-        <a class="video-card" href="https://www.youtube.com/results?search_query=Riley+Green+music" target="_blank" rel="noreferrer" aria-label="Search Riley Green music videos on YouTube">
-          <span class="play-icon" aria-hidden="true"></span>
-          <strong>Watch videos</strong>
-        </a>
       </section>
 
-      <section class="section signup" id="signup">
-        <div>
-          <p class="section-kicker">Fan club</p>
-          <h2>Get show alerts and release updates.</h2>
+      <section class="signup-section" id="signup" data-bg="alt">
+        <div class="section-inner signup-grid">
+          <div>
+            <p class="kicker">Stay connected</p>
+            <h2>Join the mailing list</h2>
+          </div>
+          <form class="signup-form" data-signup>
+            <label>
+              <span>Email address</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+            <button class="button light" type="submit">Sign up</button>
+            <p data-form-note></p>
+          </form>
         </div>
-        <form class="signup-form">
-          <label>
-            <span>Email address</span>
-            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" />
-          </label>
-          <button type="submit">Join the list</button>
-          <p class="form-note" data-form-note>Local preview only. No email is sent yet.</p>
-        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Riley Green Music local homepage preview</p>
-      <a href="#top">Back to top</a>
+      <img src="./assets/riley-green-logo.png" alt="Riley Green" />
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.facebook.com/RileyGreenMusic" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/rileyduckman" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://twitter.com/RileyGreenMusic" target="_blank" rel="noreferrer">X</a>
+        <a href="https://www.youtube.com/@RileyGreenMusic" target="_blank" rel="noreferrer">YouTube</a>
+      </div>
+      <p>© 2026 Borchetta Entertainment Group, LLC d/b/a Big Machine Records.</p>
     </footer>
 
     <script src="./script.js"></script>

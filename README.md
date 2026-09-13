@@ -1,18 +1,18 @@
 # Riley Green Music
 
-A one-page local website preview for Riley Green Music.
+A static one-page recreation of the Riley Green official site homepage for local preview and GitHub hosting.
 
 ## Run Locally
 
-Open `index.html` directly in a browser, or serve the folder with any static server.
+Open `index.html` directly in a browser, or serve the Riley Green folder with any static server.
 
 ```bash
-npx serve .
+http://127.0.0.1:8087/local-one-page/
 ```
 
 ## Files
 
-- `index.html` - page structure
-- `styles.css` - responsive visual design
-- `script.js` - header scroll state and local signup interaction
-- `assets/` - local image assets used by the page
+- `index.html` - homepage sections, navigation, splash, and footer
+- `styles.css` - responsive Riley Green-inspired styling
+- `script.js` - splash, mobile menu, and local signup interaction
+- `assets/` - local Riley Green image and logo assets from the mirrored site
