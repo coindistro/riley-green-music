@@ -646,8 +646,53 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px 24px;
+  gap: 10px;
   color: var(--white);
+}
+
+.social-link {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--cream);
+  border: 1px solid rgba(232, 209, 178, 0.42);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgba(232, 209, 178, 0.15), rgba(232, 209, 178, 0.03)),
+    rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 12px 24px rgba(0, 0, 0, 0.16);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social-link span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: #20252a;
+  border-color: var(--cream);
+  background: var(--cream);
+  transform: translateY(-2px);
+  outline: 0;
 }
 
 .site-footer p {
@@ -968,6 +1013,15 @@ h3 {
     border-bottom: 1px solid rgba(232, 209, 178, 0.12);
   }
 
+  .site-footer {
+    gap: 20px;
+    padding-inline: 16px;
+  }
+
+  .social-links {
+    max-width: 456px;
+  }
+
   .hero {
     min-height: calc(100svh - 69px);
   }
@@ -1104,6 +1158,20 @@ h3 {
 
   .site-nav {
     padding-inline: 16px;
+  }
+
+  .social-links {
+    max-width: 220px;
+  }
+
+  .social-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  .social-link svg {
+    width: 17px;
+    height: 17px;
   }
 
   .button,
