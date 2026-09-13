@@ -23,6 +23,7 @@ body {
   color: var(--cream);
   background: var(--bg);
   font-family: var(--body);
+  overflow-x: hidden;
 }
 
 body.splash-open {
@@ -47,16 +48,15 @@ select {
 .skip-link {
   position: fixed;
   left: 16px;
-  top: 16px;
+  top: -120px;
   z-index: 200;
-  transform: translateY(-120%);
   background: var(--cream);
   color: var(--bg);
   padding: 10px 14px;
 }
 
 .skip-link:focus {
-  transform: translateY(0);
+  top: 16px;
 }
 
 .splash {
@@ -108,6 +108,17 @@ select {
   margin: 0 auto 28px;
 }
 
+.splash-content h1 {
+  max-width: 900px;
+  margin: 10px auto 32px;
+  font-size: clamp(48px, 8vw, 112px);
+  line-height: 1.02;
+}
+
+.splash-content .kicker {
+  margin-bottom: 18px;
+}
+
 .kicker,
 .site-nav,
 .button,
@@ -142,21 +153,23 @@ h3 {
   text-transform: uppercase;
   transform: scaleY(1.18);
   transform-origin: bottom;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 h1 {
   margin-bottom: 32px;
-  font-size: clamp(58px, 10vw, 128px);
+  font-size: clamp(48px, 9vw, 128px);
 }
 
 h2 {
   margin-bottom: 36px;
-  font-size: clamp(40px, 7vw, 86px);
+  font-size: clamp(34px, 6.4vw, 86px);
 }
 
 h3 {
   margin-bottom: 8px;
-  font-size: clamp(24px, 3vw, 38px);
+  font-size: clamp(23px, 2.6vw, 38px);
 }
 
 .site-header {
@@ -166,7 +179,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: clamp(16px, 2.6vw, 28px);
   padding: 12px clamp(20px, 4vw, 44px);
   background: var(--bg);
   border-bottom: 1px solid rgba(61, 66, 69, 0.7);
@@ -178,16 +191,17 @@ h3 {
 }
 
 .logo-link img {
-  width: 160px;
+  width: clamp(128px, 13vw, 160px);
 }
 
 .site-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 15px 22px;
+  gap: 12px clamp(14px, 1.6vw, 22px);
   color: var(--white);
-  font-size: 17px;
+  font-size: clamp(14px, 1.35vw, 17px);
+  line-height: 1.05;
 }
 
 .site-nav a,
@@ -269,7 +283,7 @@ h3 {
 }
 
 .hero-content img {
-  width: min(520px, 80vw);
+  width: min(520px, 74vw);
   margin: 0 auto 30px;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
 }
@@ -455,9 +469,11 @@ h3 {
   z-index: 1;
   padding: 24px;
   font-family: var(--display);
-  font-size: clamp(28px, 4vw, 52px);
+  font-size: clamp(26px, 3.6vw, 52px);
   line-height: 0.95;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .music-item:hover img,
@@ -527,9 +543,12 @@ h3 {
   bottom: 22px;
   z-index: 1;
   font-family: var(--display);
-  font-size: clamp(28px, 4vw, 48px);
+  max-width: calc(100% - 48px);
+  font-size: clamp(26px, 3.4vw, 48px);
   line-height: 1;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .about-band {
@@ -674,14 +693,16 @@ h3 {
 
 .fan-hero-content h1 {
   margin-bottom: 24px;
-  font-size: clamp(54px, 11vw, 132px);
+  max-width: 900px;
+  font-size: clamp(46px, 9.5vw, 132px);
 }
 
 .fan-hero-content p:not(.kicker) {
-  max-width: 680px;
+  max-width: min(680px, 100%);
   color: var(--muted);
   font-size: clamp(20px, 2.5vw, 30px);
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .fan-perks {
@@ -700,10 +721,12 @@ h3 {
   border-right: 1px solid var(--line);
   color: var(--white);
   font-family: var(--display);
-  font-size: clamp(18px, 2.1vw, 27px);
+  font-size: clamp(17px, 1.75vw, 27px);
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .perk:last-child {
@@ -729,6 +752,7 @@ h3 {
 .tier-card {
   display: grid;
   align-content: space-between;
+  gap: 22px;
   min-height: 420px;
   padding: clamp(24px, 3vw, 36px);
   border: 1px solid var(--line);
@@ -755,7 +779,7 @@ h3 {
 }
 
 .tier-card h3 {
-  font-size: clamp(32px, 4.2vw, 56px);
+  font-size: clamp(30px, 3.6vw, 56px);
 }
 
 .tier-card p:not(.tier-label) {
@@ -803,7 +827,8 @@ h3 {
 
 .price-row strong {
   color: var(--white);
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .giving-grid {
@@ -826,8 +851,9 @@ h3 {
 .giving-grid span {
   color: var(--white);
   font-family: var(--display);
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(27px, 3vw, 48px);
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .giving-grid strong {
@@ -874,13 +900,40 @@ h3 {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1240px) and (min-width: 761px) {
   .site-header {
     align-items: center;
   }
 
   .logo-link img {
     width: 132px;
+  }
+
+  .site-nav {
+    gap: 10px 14px;
+    font-size: 14px;
+  }
+
+  .tour-row {
+    grid-template-columns: 96px minmax(0, 1fr) auto;
+  }
+
+  .fan-perks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .perk:nth-child(3) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: center;
+  }
+
+  .logo-link img {
+    width: 124px;
   }
 
   .menu-button {
@@ -920,11 +973,29 @@ h3 {
   }
 
   .hero-content {
-    margin-top: 18vh;
+    width: min(100% - 32px, 560px);
+    margin-top: 14vh;
+  }
+
+  .hero-content img {
+    width: min(380px, 78vw);
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 11vw, 68px);
+  }
+
+  h2 {
+    font-size: clamp(30px, 9.5vw, 54px);
+  }
+
+  h3 {
+    font-size: clamp(23px, 7vw, 34px);
   }
 
   .feature-banner {
-    min-height: 840px;
+    min-height: min(840px, 118svh);
   }
 
   .feature-copy {
@@ -942,6 +1013,7 @@ h3 {
   .tour-row {
     gap: 14px;
     padding: 24px 0;
+    min-height: 0;
   }
 
   .small-button {
@@ -951,7 +1023,7 @@ h3 {
   .music-item,
   .music-item.large,
   .video-tile {
-    min-height: 360px;
+    min-height: clamp(300px, 85vw, 380px);
   }
 
   .about-band {
@@ -967,9 +1039,25 @@ h3 {
   }
 
   .fan-hero {
-    min-height: 700px;
+    min-height: min(700px, 118svh);
     align-items: end;
-    padding-top: 80px;
+    padding: 80px 18px 56px;
+  }
+
+  .fan-hero-content {
+    max-width: 100%;
+  }
+
+  .fan-hero-content h1 {
+    font-size: clamp(34px, 9.5vw, 52px);
+    line-height: 1.08;
+    transform: scaleY(1.08);
+  }
+
+  .fan-hero-content p:not(.kicker) {
+    max-width: 94%;
+    font-size: clamp(17px, 4.4vw, 20px);
+    line-height: 1.5;
   }
 
   .fan-hero-shade {
@@ -996,6 +1084,83 @@ h3 {
 
   .price-row strong {
     white-space: normal;
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header {
+    padding-inline: 14px;
+  }
+
+  .logo-link img {
+    width: 112px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-nav {
+    padding-inline: 16px;
+  }
+
+  .button,
+  .small-button {
+    width: 100%;
+    padding-inline: 16px;
+    text-align: center;
+  }
+
+  .splash-content {
+    width: min(100% - 24px, 420px);
+    padding-inline: 8px;
+  }
+
+  .splash-logo {
+    width: min(290px, 76vw);
+  }
+
+  .splash-content h1 {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 1.08;
+    transform: scaleY(1.08);
+  }
+
+  .hero-content img {
+    width: min(310px, 80vw);
+  }
+
+  .fan-heading h2,
+  .signup-grid h2 {
+    font-size: clamp(26px, 7.5vw, 38px);
+    line-height: 1.08;
+    transform: scaleY(1.08);
+  }
+
+  .feature-copy,
+  .about-copy,
+  .fan-hero-content {
+    width: 100%;
+  }
+
+  .section,
+  .video-strip,
+  .signup-section,
+  .fan-section {
+    padding-inline: 16px;
+  }
+
+  .tier-card,
+  .price-panel h3,
+  .price-row,
+  .join-form-section .signup-form {
+    padding-inline: 18px;
+  }
+
+  .giving-grid article {
+    min-height: 140px;
   }
 }
 
@@ -1007,5 +1172,30 @@ h3 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+.fan-hero-content h1 span,
+.fan-heading h2 span {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .fan-hero-content p:not(.kicker) {
+    width: min(340px, calc(100vw - 36px));
+    max-width: min(340px, calc(100vw - 36px));
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 430px) {
+  .fan-hero-content h1 {
+    font-size: clamp(33px, 9vw, 43px);
+  }
+
+  .fan-heading h2 {
+    font-size: clamp(26px, 7vw, 34px);
   }
 }
