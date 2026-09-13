@@ -13,6 +13,7 @@ http://127.0.0.1:8087/local-one-page/
 ## Files
 
 - `index.html` - homepage sections, navigation, splash, and footer
+- `fan-club.html` - premium fan club membership page
 - `styles.css` - responsive Riley Green-inspired styling
-- `script.js` - splash, mobile menu, and local signup interaction
+- `script.js` - splash, mobile menu, and local form interactions
 - `assets/` - local Riley Green image and logo assets from the mirrored site
