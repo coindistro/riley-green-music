@@ -13,12 +13,12 @@ http://127.0.0.1:8087/local-one-page/
 ## Files
 
 - `index.html` - homepage sections, navigation, splash, and footer
-- `fan-club.html` - premium fan club membership page with test BTC checkout buttons
+- `fan-club.html` - premium fan club membership page with BNB Smart Chain checkout buttons
 - `styles.css` - responsive Riley Green-inspired styling
-- `script.js` - splash, mobile menu, local form, and fixed-rate BTC checkout interactions
+- `script.js` - splash, mobile menu, local form, and fixed-rate BNB checkout interactions
 - `assets/` - local Riley Green image and logo assets from the mirrored site
 
 ## Payment Test Setup
 
-The fan club checkout currently uses a fixed test conversion rate of `1 BTC = $100,000`.
-Replace `BTC_ADDRESS_HERE` and the empty `qrImage` value in `script.js` before using real payment details.
+The fan club checkout currently uses BNB Smart Chain (BEP20) with a fixed test conversion rate of `1 BNB = $600`.
+The payment address and QR code are configured in `script.js`.

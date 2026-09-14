@@ -1075,19 +1075,20 @@ h3 {
 }
 
 .payment-qr {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 240px;
+  padding: 52px 18px 18px;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(45deg, rgba(232, 209, 178, 0.08) 25%, transparent 25% 50%, rgba(232, 209, 178, 0.08) 50% 75%, transparent 75%),
-    rgba(9, 10, 11, 0.18);
-  background-size: 28px 28px;
+  background: #ffffff;
 }
 
 .payment-qr img {
-  width: min(240px, 100%);
+  width: min(280px, 100%);
   height: auto;
+  display: block;
+  border-radius: 4px;
 }
 
 .payment-qr div {
@@ -1098,6 +1099,36 @@ h3 {
   padding: 18px;
   color: var(--cream);
   text-align: center;
+}
+
+.payment-qr .chain-badge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: #171a1d;
+  background: #f3ba2f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-weight: 800;
+  text-align: center;
+}
+
+.payment-qr .chain-badge span {
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #f3ba2f;
+  background: #171a1d;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.04em;
 }
 
 .payment-qr span {
@@ -1500,6 +1531,18 @@ body.payment-open {
 
   .payment-sheet {
     padding: 24px 16px;
+  }
+
+  .payment-qr {
+    min-height: 260px;
+    padding-inline: 14px;
+  }
+
+  .payment-qr .chain-badge {
+    max-width: calc(100% - 22px);
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
   }
 
   .payment-close {
