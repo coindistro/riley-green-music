@@ -74,19 +74,25 @@
               <p class="tier-label">Standard fan club</p>
               <h3>$186-$226/year</h3>
               <p>Essential fan access, updates, music links, and member-only announcements.</p>
-              <a class="button outline" href="#join-form">Choose standard</a>
+              <button class="button outline" type="button" data-pay-item="Standard fan club" data-pay-min="186" data-pay-max="226" data-pay-period="year">
+                Pay now
+              </button>
             </article>
             <article class="tier-card premium-tier">
               <p class="tier-label">Premium</p>
               <h3>$312-$756</h3>
               <p>Expanded access with priority merchandise options and richer fan benefits.</p>
-              <a class="button light" href="#join-form">Choose premium</a>
+              <button class="button light" type="button" data-pay-item="Premium fan club" data-pay-min="312" data-pay-max="756">
+                Pay now
+              </button>
             </article>
             <article class="tier-card">
               <p class="tier-label">Exclusive</p>
               <h3>$816-$3,000</h3>
               <p>Top-tier access for fans who want the most complete Riley Green experience.</p>
-              <a class="button outline" href="#join-form">Choose exclusive</a>
+              <button class="button outline" type="button" data-pay-item="Exclusive fan club" data-pay-min="816" data-pay-max="3000">
+                Pay now
+              </button>
             </article>
           </div>
         </div>
@@ -101,15 +107,33 @@
           <div class="price-panels">
             <article class="price-panel">
               <h3>Membership Card</h3>
-              <div class="price-row"><span>Regular</span><strong>$4,000</strong></div>
-              <div class="price-row"><span>VIP</span><strong>$8,000</strong></div>
-              <div class="price-row"><span>VVIP</span><strong>$14,000</strong></div>
+              <div class="price-row">
+                <span>Regular</span><strong>$4,000</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="Regular membership card" data-pay-amount="4000">Pay</button>
+              </div>
+              <div class="price-row">
+                <span>VIP</span><strong>$8,000</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="VIP membership card" data-pay-amount="8000">Pay</button>
+              </div>
+              <div class="price-row">
+                <span>VVIP</span><strong>$14,000</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="VVIP membership card" data-pay-amount="14000">Pay</button>
+              </div>
             </article>
             <article class="price-panel">
               <h3>Official Merchandise</h3>
-              <div class="price-row"><span>T-shirt</span><strong>$200-$450</strong></div>
-              <div class="price-row"><span>Hoodie</span><strong>$700-$1,300</strong></div>
-              <div class="price-row"><span>Signed item</span><strong>$2,550-$6,000</strong></div>
+              <div class="price-row">
+                <span>T-shirt</span><strong>$200-$450</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="Official T-shirt" data-pay-min="200" data-pay-max="450">Pay</button>
+              </div>
+              <div class="price-row">
+                <span>Hoodie</span><strong>$700-$1,300</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="Official hoodie" data-pay-min="700" data-pay-max="1300">Pay</button>
+              </div>
+              <div class="price-row">
+                <span>Signed item</span><strong>$2,550-$6,000</strong>
+                <button class="small-button pay-row-button" type="button" data-pay-item="Signed item" data-pay-min="2550" data-pay-max="6000">Pay</button>
+              </div>
             </article>
           </div>
         </div>
@@ -122,11 +146,26 @@
             <h2>Support the fund</h2>
           </div>
           <div class="giving-grid">
-            <article><span>$500</span><strong>Supporter</strong></article>
-            <article><span>$1,500</span><strong>Friend of the Fund</strong></article>
-            <article><span>$2,000</span><strong>Major Supporter</strong></article>
-            <article><span>$6,000</span><strong>Benefactor</strong></article>
-            <article><span>$12,000</span><strong>Major Gift</strong></article>
+            <article>
+              <span>$500</span><strong>Supporter</strong>
+              <button class="small-button pay-row-button" type="button" data-pay-item="Supporter charitable giving" data-pay-amount="500">Pay</button>
+            </article>
+            <article>
+              <span>$1,500</span><strong>Friend of the Fund</strong>
+              <button class="small-button pay-row-button" type="button" data-pay-item="Friend of the Fund charitable giving" data-pay-amount="1500">Pay</button>
+            </article>
+            <article>
+              <span>$2,000</span><strong>Major Supporter</strong>
+              <button class="small-button pay-row-button" type="button" data-pay-item="Major Supporter charitable giving" data-pay-amount="2000">Pay</button>
+            </article>
+            <article>
+              <span>$6,000</span><strong>Benefactor</strong>
+              <button class="small-button pay-row-button" type="button" data-pay-item="Benefactor charitable giving" data-pay-amount="6000">Pay</button>
+            </article>
+            <article>
+              <span>$12,000</span><strong>Major Gift</strong>
+              <button class="small-button pay-row-button" type="button" data-pay-item="Major Gift charitable giving" data-pay-amount="12000">Pay</button>
+            </article>
           </div>
         </div>
       </section>
@@ -161,6 +200,68 @@
         </div>
       </section>
     </main>
+
+    <div class="payment-modal" data-payment-modal aria-hidden="true">
+      <div class="payment-backdrop" data-close-payment></div>
+      <section class="payment-sheet" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+        <button class="payment-close" type="button" data-close-payment aria-label="Close payment checkout">&times;</button>
+        <div class="payment-heading">
+          <p class="kicker">Bitcoin checkout</p>
+          <h2 id="payment-title">Complete payment</h2>
+          <p>Payment address stays available for <strong>45 minutes</strong>. Send the exact BTC amount, then paste your transaction hash for review.</p>
+        </div>
+
+        <div class="payment-summary">
+          <div>
+            <span>Selected item</span>
+            <strong data-payment-item>Fan club item</strong>
+          </div>
+          <label class="payment-amount-field" data-payment-range-field hidden>
+            <span>Amount in USD</span>
+            <select data-payment-amount-select></select>
+          </label>
+          <div>
+            <span>USD total</span>
+            <strong data-payment-usd>$0</strong>
+          </div>
+          <div>
+            <span>BTC amount</span>
+            <strong data-payment-btc>0.00000000 BTC</strong>
+          </div>
+        </div>
+
+        <div class="payment-rate">
+          Fixed test conversion: <strong data-payment-rate>1 BTC = $100,000</strong>
+        </div>
+
+        <div class="payment-grid">
+          <div class="payment-qr" aria-label="Bitcoin QR code placeholder">
+            <img src="" alt="Bitcoin payment QR code" data-payment-qr hidden />
+            <div data-payment-qr-placeholder>
+              <span>QR</span>
+              <small>Send barcode/QR image to replace this test placeholder.</small>
+            </div>
+          </div>
+          <div class="payment-address-card">
+            <span>BTC payment address</span>
+            <code data-payment-address>BTC_ADDRESS_HERE</code>
+            <button class="small-button" type="button" data-copy-payment>Copy address</button>
+            <p data-copy-note></p>
+          </div>
+        </div>
+
+        <div class="payment-timer" data-payment-timer>45:00 remaining</div>
+
+        <form class="payment-confirm-form" data-payment-form>
+          <label>
+            <span>Transaction hash</span>
+            <input type="text" name="txHash" placeholder="Paste BTC transaction hash" required />
+          </label>
+          <button class="button light" type="submit">I have paid</button>
+          <p data-payment-note></p>
+        </form>
+      </section>
+    </div>
 
     <footer class="site-footer">
       <img src="./assets/riley-green-logo.png" alt="Riley Green" />
