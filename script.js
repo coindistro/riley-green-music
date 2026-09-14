@@ -4,11 +4,9 @@ const menuButton = document.querySelector("[data-menu]");
 const nav = document.querySelector("[data-nav]");
 const signup = document.querySelector("[data-signup]");
 const note = document.querySelector("[data-form-note]");
-const stylesheetHref = document.querySelector('link[rel="stylesheet"]')?.href ?? window.location.href;
 const paymentConfig = {
   btcUsdRate: 100000,
   address: "bc1qmeys52n8lke7xcnnpvatlszxkjv4j5x9dxe9t8",
-  qrImage: new URL("./assets/bitcoin-payment-qr.png", stylesheetHref).href,
   expiresInSeconds: 45 * 60,
 };
 
@@ -154,9 +152,21 @@ const openPayment = (button) => {
   }
 
   if (paymentQr && paymentQrPlaceholder) {
-    paymentQr.hidden = !paymentConfig.qrImage;
-    paymentQrPlaceholder.hidden = Boolean(paymentConfig.qrImage);
-    paymentQr.src = paymentConfig.qrImage;
+    const qrSource = paymentQr.dataset.paymentQrSrc || paymentQr.getAttribute("src");
+
+    paymentQr.onload = () => {
+      paymentQr.hidden = false;
+      paymentQrPlaceholder.hidden = true;
+    };
+
+    paymentQr.onerror = () => {
+      paymentQr.hidden = true;
+      paymentQrPlaceholder.hidden = false;
+    };
+
+    paymentQr.hidden = true;
+    paymentQrPlaceholder.hidden = true;
+    paymentQr.src = qrSource;
   }
 
   if (paymentRangeField && paymentAmountSelect) {

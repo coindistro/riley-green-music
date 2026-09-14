@@ -1214,6 +1214,10 @@ body.payment-open {
   overflow: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 1080px) {
   .site-header {
     align-items: flex-start;
