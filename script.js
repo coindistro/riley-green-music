@@ -6,9 +6,9 @@ const signup = document.querySelector("[data-signup]");
 const note = document.querySelector("[data-form-note]");
 const stylesheetHref = document.querySelector('link[rel="stylesheet"]')?.href ?? window.location.href;
 const paymentConfig = {
-  bnbUsdRate: 600,
-  address: "0x610E3eA14ED16023b0C20dC4F214579982FF137E",
-  qrImage: new URL("./assets/bnb-smart-chain-bep20-qr.png", stylesheetHref).href,
+  btcUsdRate: 100000,
+  address: "bc1qmeys52n8lke7xcnnpvatlszxkjv4j5x9dxe9t8",
+  qrImage: new URL("./assets/bitcoin-payment-qr.png", stylesheetHref).href,
   expiresInSeconds: 45 * 60,
 };
 
@@ -84,7 +84,7 @@ const formatUsd = (amount) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-const formatBnb = (amount) => `${(amount / paymentConfig.bnbUsdRate).toFixed(8)} BNB`;
+const formatBtc = (amount) => `${(amount / paymentConfig.btcUsdRate).toFixed(8)} BTC`;
 
 const updatePaymentAmount = (amount) => {
   activePaymentAmount = Number(amount);
@@ -94,7 +94,7 @@ const updatePaymentAmount = (amount) => {
   }
 
   if (paymentBtc) {
-    paymentBtc.textContent = formatBnb(activePaymentAmount);
+    paymentBtc.textContent = formatBtc(activePaymentAmount);
   }
 };
 
@@ -146,7 +146,7 @@ const openPayment = (button) => {
   }
 
   if (paymentRate) {
-    paymentRate.textContent = `1 BNB = ${formatUsd(paymentConfig.bnbUsdRate)}`;
+    paymentRate.textContent = `1 BTC = ${formatUsd(paymentConfig.btcUsdRate)}`;
   }
 
   if (paymentAddress) {
@@ -223,7 +223,7 @@ if (copyPayment && copyNote) {
   copyPayment.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(paymentConfig.address);
-      copyNote.textContent = "BNB Smart Chain BEP20 address copied.";
+      copyNote.textContent = "Bitcoin address copied.";
     } catch {
       copyNote.textContent = "Copy failed. Select and copy the address manually.";
     }
