@@ -4,10 +4,11 @@ const menuButton = document.querySelector("[data-menu]");
 const nav = document.querySelector("[data-nav]");
 const signup = document.querySelector("[data-signup]");
 const note = document.querySelector("[data-form-note]");
+const stylesheetHref = document.querySelector('link[rel="stylesheet"]')?.href ?? window.location.href;
 const paymentConfig = {
   bnbUsdRate: 600,
   address: "0x610E3eA14ED16023b0C20dC4F214579982FF137E",
-  qrImage: "./assets/bnb-smart-chain-bep20-qr.png",
+  qrImage: new URL("./assets/bnb-smart-chain-bep20-qr.png", stylesheetHref).href,
   expiresInSeconds: 45 * 60,
 };
 
