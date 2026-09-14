@@ -921,12 +921,14 @@ h3 {
   min-height: 38px;
   padding: 10px 16px;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .price-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
+  gap: 16px;
 }
 
 .giving-grid article {
@@ -1410,13 +1412,33 @@ body.payment-open {
 
   .price-row {
     display: grid;
-    gap: 6px;
+    gap: 8px;
     grid-template-columns: 1fr;
+    align-items: stretch;
+    padding-block: 22px;
   }
 
   .price-row strong {
     white-space: normal;
     text-align: left;
+  }
+
+  .tier-card .button,
+  .pay-row-button {
+    min-height: 54px;
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .giving-grid article {
+    justify-items: stretch;
+  }
+
+  .giving-grid .pay-row-button {
+    width: 100%;
+    margin-top: 8px;
   }
 
   .payment-modal {
@@ -1472,6 +1494,24 @@ body.payment-open {
     width: 100%;
     padding-inline: 16px;
     text-align: center;
+  }
+
+  .tier-card {
+    min-height: 0;
+    gap: 18px;
+  }
+
+  .price-row {
+    padding-block: 20px;
+  }
+
+  .price-row span,
+  .price-row strong {
+    text-align: center;
+  }
+
+  .pay-row-button {
+    border-radius: 4px;
   }
 
   .splash-content {
